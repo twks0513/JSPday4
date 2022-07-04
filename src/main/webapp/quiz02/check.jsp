@@ -11,11 +11,13 @@
 </head>
 <body>
 	<%MembersDAO dao = new MembersDAO();		
-	
-		int num = dao.loginCheck(request.getParameter("id"), request.getParameter("pwd"));		
+		String id= request.getParameter("id");
+		String pw = request.getParameter("pwd");	
+		int num = dao.loginCheck(id,pw);
 		if(num ==1){	
-			MembersDTO dto = dao.getName(request.getParameter("id"));						
+			MembersDTO dto = dao.getName(request.getParameter("id"));			
 			session.setAttribute("id",dto.getId());
+			session.setAttribute("name",dto.getName());
 			out.print("<script>alert('"+dto.getName()+"님 환영합니다'); location.href='main.jsp';</script>");
 			
 			%>							
