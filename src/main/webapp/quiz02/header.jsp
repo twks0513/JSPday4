@@ -15,6 +15,7 @@
 <div align="center">
 <header><h1>환영합니다</h1>
 	<div id="div1">
+	<a href="login.jsp">로그인 페이지</a>
 	<%if(session.getAttribute("id")==null){ %> 
 		<a href="register.jsp">회원가입</a> 
 	<%} %>

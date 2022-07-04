@@ -13,7 +13,6 @@
 	<% if(session.getAttribute("id")!=null){%>
 	<div align="center">
 		<h1><%=session.getAttribute("name") %>님이 로그인중 입니다</h1>
-		<button onclick="location.href='main.jsp'">메인으로 돌아가기</button>
 	</div>					
 	<%}else{%>
 	<div align="center">
