@@ -39,7 +39,7 @@ th {text-align: center;}
 	%>
 	<%@ include file="header.jsp" %>
 	<div align="center">		
-	<h1>회원 정보 수정 및 삭제</h1>
+	<h1>회원 정보 수정</h1>
 		<form name="modifyForm" action="modifychk.jsp" method="post">
 		<table border="1">
 			<tr><th>아이디 </th><th><%=dto.getId() %></th></tr>
@@ -49,7 +49,7 @@ th {text-align: center;}
 			<tr><th>주소 </th><td><input type="text" name="addr" value="<%=dto.getAddr() %>"></td></tr>
 			<tr><th>전화번호 <td><input type="text" name="tel" value="<%=dto.getTel() %>"></td></tr>
 		</table>
-			<button type="button" onclick="chkval()">수정</button> <button type="button" onclick="location.href='delete.jsp'">삭제</button>
+			<button type="button" onclick="chkval()">수정</button>
 		</form>
 	</div>
 	<%@ include file="footer.jsp" %>

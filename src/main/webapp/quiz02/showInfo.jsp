@@ -39,7 +39,8 @@
 			<th>전화번호</th><th><%=dto.getTel() %></th>
 		</tr>
 	</table>	
-	<button type="button" onclick="location.href='modifyInfo.jsp'">수정</button>
+	<button type="button" onclick="location.href='modifyInfo.jsp'">수정</button> 
+	<button type="button" onclick="location.href='delete.jsp'">삭제</button>
 	</div>
 	<%@ include file="footer.jsp" %>
 </body>

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 #div1 {background-color: black; font-size: 15pt;}
-#div1 a {color: white;}
+#div1 a {color: white; text-decoration: none; margin: 20px;}
 #div1 a:hover {background-color: gray;}
 </style>
 </head>

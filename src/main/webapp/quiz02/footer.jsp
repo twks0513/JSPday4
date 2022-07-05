@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div align="center">
+<div align="center" style="margin: auto;">
 <hr>
-<header><h3>footer입니다</h3></header>
+<footer style="position:absolute; bottom: 0; text-align: center; left: 50%;  transform: translate(-50%, -50%);"><h3>footer입니다</h3></footer>
+
 </div>
 </body>
 </html>

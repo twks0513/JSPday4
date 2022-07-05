@@ -67,22 +67,6 @@ public class MembersDAO {
 		return dto;
 	}
 	
-	public MembersDTO getName(String id) {
-		String sql = "select * from members where id =?";
-		MembersDTO dto = new MembersDTO();		
-		try {
-			ps = con.prepareStatement(sql);
-			ps.setString(1, id);
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				dto.setName(rs.getString("name"));	
-				dto.setId(rs.getString("id"));
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return dto;
-	}
 	
 	public int delete(String id) {
 		String sql ="delete from members where id=?";
@@ -117,20 +101,14 @@ public class MembersDAO {
 	}	
 	
 	public int loginCheck(String id, String pwd) {
-		String sql = "select * from members where id=?";
-		String sql2 = "select * from members where id=? and pwd=?";
+		String sql = "select * from members where id=?";		
 		int num = 0;
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				if(rs.getString("id").equals(id))
-				ps = con.prepareStatement(sql2);
-				ps.setString(1, id);
-				ps.setString(2, pwd);
-				rs = ps.executeQuery();
-				if(rs.next()) {
+				if(pwd.equals(rs.getString("pwd"))){		
 					System.out.println("로그인 성공");
 					num = 1;
 				}else {

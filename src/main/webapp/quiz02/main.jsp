@@ -10,6 +10,8 @@
 <title>Insert title here</title>
 <style type="text/css">
 td {text-align: center;}
+td a{text-decoration: none; font-weight: bold;}
+td a:visited {color: black; }
 </style>
 </head>
 <body>
@@ -22,7 +24,8 @@ td {text-align: center;}
 		
 		if(session.getAttribute("id")!=null){%>
 		<div align="center">
-			<h1>회원만 접속할수있는 페이지입니다</h1>	
+			<h1>회원만 접속할수있는 페이지입니다</h1>	<br>
+			<h3>이름을 클릭하면 정보를 볼수있습니다</h3>
 		</div>		
 		<% }else{
 			response.sendRedirect("login.jsp");
@@ -36,7 +39,7 @@ td {text-align: center;}
 		</tr>
 		<%for(MembersDTO dto : list){%>			
 		<tr>
-			<td><%=dto.getId() %></td><td><%=dto.getPwd() %></td><td><%=dto.getName() %></td><td><%=dto.getAddr()%></td><td><%=dto.getTel() %></td>
+			<td><%=dto.getId() %></td><td><%=dto.getPwd() %></td><td><a href="showInfo.jsp"><%=dto.getName() %></a></td><td><%=dto.getAddr()%></td><td><%=dto.getTel() %></td>
 		</tr>	
 		<%} %>
 	</table><br>
